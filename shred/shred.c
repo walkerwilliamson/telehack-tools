@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     
-	FILE *fp;
+    FILE *fp;
     char *hash = argv[1];
     char *wordlist_filename = argv[2];
     char salt[3];
@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
     memcpy(salt, hash, 2);
     salt[2] = 0;
 
-	if ((fp = fopen(wordlist_filename, "r")) == NULL)
-	{
-		printf("File not found '%s'\n", wordlist_filename);
-		exit(1);
-	}
+    if ((fp = fopen(wordlist_filename, "r")) == NULL)
+    {
+        printf("File not found '%s'\n", wordlist_filename);
+        exit(1);
+    }
 
     while (fgets(word, sizeof(word), fp))
     {
